@@ -3,7 +3,7 @@ from pydantic import BaseModel, Field
 
 class User(BaseModel):
     name: str = Field(default="lastname", min_length=1, max_length=20)
-    age: Annotated[Union[int, None], Field(default=100, ge=5, lt=150)]
+    age: Annotated[Union[int, None], Field(default=100, ge=5, lt=150)] = None
     id: Annotated[Union[int, None], Field(default=100, ge=1, lt=150)] = None
 
 class Main_User(User):
